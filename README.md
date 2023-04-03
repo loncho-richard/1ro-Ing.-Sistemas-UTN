@@ -27,9 +27,9 @@ Para aprender a usar ambas opciones les dejo unos tutoriales:
 
 
 # Formas de subir los archivos
- - Dentro de las carpetas correspondientes a cada actividad, subir tu archivo con nombre y apellido para identificarlos de esta forma:
+ - Dentro de las carpetas correspondientes a cada actividad, subir tu archivo con nombre y apellido para identificarlos de esta forma: "{'numero de la practica'}-{'nombre de la practica'}-{'NombreApellido'}"
    
-    - ej: "CarlosRichardson.py".
+    - ej: "PracN1-DatosSimples-Carlosrichardson".
 
 
  - Estos Archivos van a estar dentro de la carpeta que corresponda con la actividad.
