@@ -76,7 +76,7 @@ def crear_locales():
                 break
             
             os.system("clear")
-            print("Ingresa el tipo de rubro que quieres para tu local\n---\nTipos de rubros: \n -indumentaria  \n -perfumería    \n -comida\n\nEn caso de no querer ingresar mas locales, tipear 'salir'")
+            print("Ingresa el tipo de rubro que quieres para tu local\n---\nTipos de rubros: \n -indumentaria  \n -perfumería  \n -comida\n\nEn caso de no querer ingresar mas locales, tipear 'salir'")
             print("")
             rubro_local = str(input("Indique la opcion que desea: "))
             rubro_local.lower()
@@ -109,7 +109,7 @@ def crear_locales():
         if cant_comida == 0 and cant_perfumeria == 0 and cant_indumentaria == 0:
             print("No has creado ningun local")
             input()
-            return
+            return True
 
         elif cant_comida == cant_perfumeria == cant_indumentaria:
             print(f"Los tres rubros tienen la misma cantidad de locales con un total de {cant_comida}")
@@ -120,41 +120,49 @@ def crear_locales():
             print(f"los rubros que tienen una mayor cantidad de locales son indumentaria y comida con un total de {cant_comida} cada uno.")  
             print(f"el rubro con menos locales es {cant_perfumeria}")
             input()
+            return True
 
         elif cant_comida == cant_perfumeria and cant_comida > cant_indumentaria:
             print(f"los rubros que tienen una mayor cantidad de locales son perfumeria y comida con un total de {cant_comida} cada uno.")  
             print(f"el rubro con menos locales es {cant_indumentaria}")
             input()
+            return True
         
         elif cant_indumentaria == cant_perfumeria and cant_perfumeria > cant_comida :
             print(f"los rubros que tienen una mayor cantidad de locales son perfumeria e indumentaria con un total de {cant_indumentaria} cada uno.")
             print(f"el rubro con menos locales es {cant_comida}")
             input()
+            return True
         
         if cant_comida == cant_indumentaria and cant_comida < cant_perfumeria:
             print(f"los rubros que tienen una menor cantidad de locales son indumentaria y comida con un total de {cant_comida} cada uno.")  
             print(f"el rubro con menos locales es {cant_perfumeria}")
             input()
+            return True
 
         elif cant_comida == cant_perfumeria and cant_comida < cant_indumentaria:
             print(f"los rubros que tienen una menor cantidad de locales son perfumeria y comida con un total de {cant_comida} cada uno.")  
             print(f"el rubro con menos locales es {cant_indumentaria}")
             input()
+            return True
         
         elif cant_indumentaria == cant_perfumeria and cant_comida < cant_comida :
             print(f"los rubros que tienen una menor cantidad de locales son perfumeria e indumentaria con un total de {cant_indumentaria} cada uno.")
             print(f"el rubro con menos locales es {cant_comida}")
-            input( )
+            input()
+            return True
         
         elif cant_comida > cant_indumentaria and cant_comida > cant_perfumeria:
             print(f"El rubro con mas locales es Comida con un total de {cant_comida} locales")
             if cant_indumentaria > cant_perfumeria:
                 print(f"El rubro con menos locales es Perfumería con un total de {cant_perfumeria} locales")
                 input()
+                return True
                 
             else:
                 print(f"El rubro con menos locales es Indumentaria con: {cant_indumentaria} ")
                 input()
+                return True
         elif cant_indumentaria > cant_perfumeria:
             print(f"El rubro con mas locales es Indumentaria con un total de {cant_indumentaria} locales")
             print(f"El rubro con menos locales es Comida con un total de {cant_comida} locales")
@@ -165,9 +173,11 @@ def crear_locales():
             if cant_indumentaria > cant_comida:
                 print(f"El rubro con menos locales es Comida con un total de {cant_comida} locales")
                 input()
+                return True
             else:
                 print(f"El rubro con menos locales es Indumentaria con un total de {cant_indumentaria} locales")
                 input()
+                return True
 
 
 def show_menu(): 
