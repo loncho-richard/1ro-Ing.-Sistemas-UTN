@@ -202,11 +202,7 @@ def show_menu():
             elif option == "d":
                 print("")
         
-        if option == 2:
-            print("En construcción …\n Presiona enter para continuar")
-            input()
-
-        if option == 3:
+        if option == 2 or option == 3 or option == 5:
             print("En construcción …\n Presiona enter para continuar")
             input()
 
@@ -216,28 +212,12 @@ def show_menu():
 
             option = str(input("Ingresa la accion que desea realizar: "))
 
-            if option == "a":
-                print("En construcción …\n Presiona enter para continuar")
-                input()
-
-            elif option == "b":
-                print("En construcción …\n Presiona enter para continuar")
-                input()
-
-            elif option == "c":
-                print("En construcción …\n Presiona enter para continuar")
-                input()
-
-            elif option == "d":
+            if option == "a" or option== "b" or option =="c" or option== "d":
                 print("En construcción …\n Presiona enter para continuar")
                 input()
 
             elif option == "e":
                 print("")
-
-        if option == 5:
-            print("En construcción …\n Presiona enter para continuar")
-            input()
 
         if option == 0:
             break
