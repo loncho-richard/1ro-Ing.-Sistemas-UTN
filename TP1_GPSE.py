@@ -1,3 +1,5 @@
+### TP1_AYED-Gritti,Penhalvel,Sosa,Estevez ###
+
 import getpass 
 import os
 usuario = "admin@shopping.com"
