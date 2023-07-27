@@ -252,8 +252,9 @@ def create_shops(current_user: tuple, db: list):
 
 
 def question(idx):
-    if idx < 10:
-        return f"|O{idx}"
+    if idx is int:
+        if idx < 10:
+            return f"|O{idx}"
     elif idx == "":
         return "|00"
     else:
@@ -261,7 +262,7 @@ def question(idx):
 
 def map_shops(db):
     i = 0
-    for floor in range(5):
+    for floor in range(1):
         print(f"Piso {floor + 1}")
         for row in range(10):
             print("+--+--+--+--+--+")
@@ -278,7 +279,7 @@ def map_shops(db):
             print(f"{question(id_1)}{question(id_2)}{question(id_3)}{question(id_4)}{question(id_5)}|")
         
         print("+--+--+--+--+--+")
-        print("  (...)   ")
+        print("     (...)      ")
 
 
 def show_shops(db):
@@ -339,8 +340,10 @@ def show_menu(current_user: tuple):
                         delete_shops(db=shops, name_shop=name_shop, code_shop=code_shop)
                     
                     elif option == "d":
+                        os.system("cls")
                         map_shops(shops)
-
+                        print("Presiona enter para continuar")
+                        input()
                         
                     os.system("cls")
                     sub_menu_gestion()
