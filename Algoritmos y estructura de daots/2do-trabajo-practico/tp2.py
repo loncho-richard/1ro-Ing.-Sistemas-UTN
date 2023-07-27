@@ -95,8 +95,7 @@ def sub_menu_dueño():
         c) Eliminar descuento de mi local
         d) Volver''')
     
-# Funcionalidades de locales
- 
+# Funcionalidades de locales 
 
 def search_obj(db, obj, column):
     if not db:
@@ -212,7 +211,6 @@ def save_in_db(i, db, line, id, name, ubication, area, user_code,is_active):
         return "Local Guardado con exito! 【 ͡❛ ͜ʖ ͡❛】👍"
 
 
-
 def create_shops(current_user: tuple, db: list):
     global id, i
     flag = False
@@ -257,6 +255,7 @@ def question(idx):
         return "|00"
     else:
         return f"|{idx}"
+
 
 def map_shops(db):
     i = 0
