@@ -1,12 +1,6 @@
 import getpass as get
 import os
 
-""" Array precargado con 'codigo', 'usuario', 'clave', 'tipo' """
-users_db = [["1", "4", "6", "9"],
-            ["admin@shopping.com", "localA@shopping.com", "localB@shopping.com", "unCliente@shopping.com"],
-            ["12345", "AAAA1111", "BBBB2222", "33xx33"],
-            ["administrador", "dueñoLocal", "dueñoLocal", "cliente"]] 
-
 
 def login(db):
     """ Inicio de sesion como administrador """
@@ -89,13 +83,17 @@ def menu_clientela():
 def menu_dueño():
     print('''
         1. Gestión de Descuentos
-        a) Crear descuento para mi local
-        b) Modificar descuento de mi local
-        c) Eliminar descuento de mi local
-        d) Volver
         2. Aceptar / Rechazar pedido de descuento
         3. Reporte de uso de descuentos
         0. Salir''')
+    
+
+def sub_menu_dueño():
+    print('''
+        a) Crear descuento para mi local
+        b) Modificar descuento de mi local
+        c) Eliminar descuento de mi local
+        d) Volver''')
     
 # Funcionalidades de locales
  
@@ -292,6 +290,7 @@ def show_shops(db):
 def show_menu(current_user: tuple):
     
     if current_user[3] == "administrador":
+
         menu_admin()
 
         option = int(input("Ingresa la accion que desea realizar: "))
@@ -355,9 +354,9 @@ def show_menu(current_user: tuple):
 
             if option == 4:
                 os.system("cls")
-                pass
+                menu_novedad()
 
-                option = str(input("Ingresa la accion que desea realizar: "))
+                option = int(input("Ingresa la accion que desea realizar: "))
 
                 if option == "a" or option== "b" or option =="c" or option== "d":
                     print("En construcción …\n Presiona enter para continuar")
@@ -368,7 +367,56 @@ def show_menu(current_user: tuple):
             os.system("cls")
             menu_admin()
             option = int(input("Ingresa la accion que desea realizar: "))
+
+    elif current_user[3] == "dueñoLocal":
         
+        menu_dueño()
+        option = int(input("Ingresa la accion que desea realizar: "))
+
+        while option != 0:
+
+            if option == 1:
+                sub_menu_dueño()
+                
+                option = str(input("Ingresa la accion que desea realizar: "))
+
+                while option != "d":
+                    
+                    if option == "a" or option == "b" or option == "c":
+                        print("En construcción …\n Presiona enter para continuar")
+                        input()
+                    
+                    sub_menu_dueño()
+                    option = str(input("Ingresa la accion que desea realizar: "))
+
+            elif option == 2 or option == 3:
+                print("En construcción …\n Presiona enter para continuar")
+                input()
+
+            menu_dueño()
+            option = int(input("Ingresa la accion que desea realizar: "))
+
+    elif current_user[3] == "cliente":
+
+        menu_clientela()
+        option = int(input("Ingresa la accion que desea realizar: "))
+
+        while option != 0:
+            if option == 1 or option == 2 or option == 3 or option == 4:
+                print("En construcción …\n Presiona enter para continuar")
+                input()
+
+            menu_clientela()
+            option = int(input("Ingresa la accion que desea realizar: "))
+
+
+""" Array precargado con 'codigo', 'usuario', 'clave', 'tipo' """
+users_db = [["1", "4", "6", "9"],
+            ["admin@shopping.com", "localA@shopping.com", "localB@shopping.com", "unCliente@shopping.com"],
+            ["12345", "AAAA1111", "BBBB2222", "33xx33"],
+            ["administrador", "dueñoLocal", "dueñoLocal", "cliente"]] 
+
+
 id = 0
 i = 0
 fil=50
