@@ -1,39 +1,16 @@
-def busqueda_dicotomica_vertical_por_nombre(arreglo, nombre_objetivo):
-    if not arreglo:
-        return None
-
-    filas = len(arreglo)
-    izquierda = 0
-    derecha = filas - 1
-
-    while izquierda <= derecha:
-        medio = (izquierda + derecha) // 2
-
-        nombre_medio = arreglo[medio][1]
-
-        if nombre_medio == nombre_objetivo:
-            return arreglo[medio][0]
-        elif nombre_medio > nombre_objetivo:
-            derecha = medio - 1
-        else:
-            izquierda = medio + 1
+def busqueda_por_corrimiento(arreglo, id_objetivo):
+    for idx, fila in enumerate(arreglo):
+        if fila[0] == id_objetivo:
+            return idx
 
     return None
 
-# Ejemplo de uso:
-arreglo_datos = [
-    [101, 'Alice'],
-    [201, 'Bob'],
-    [305, 'John'],
-    [402, 'Mike'],
-    [510, 'Sarah'],
-    [600, 'Zoe']
-]
-nombre_buscado = 'Bob'
+db = [[1, 'asd'],
+      [2, 'asd'],
+      [4, 'asd'],
+      [6, 'asd'],
+      [8, 'asd']]
 
-id_encontrado = busqueda_dicotomica_vertical_por_nombre(arreglo_datos, nombre_buscado)
+idx = busqueda_por_corrimiento(db, 4)
 
-if id_encontrado is not None:
-    print(f"El ID para el nombre '{nombre_buscado}' es {id_encontrado}.")
-else:
-    print(f"No se encontró ningún ID para el nombre '{nombre_buscado}'.")
+print(type(idx), idx)

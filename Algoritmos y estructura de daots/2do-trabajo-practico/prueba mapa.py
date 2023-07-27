@@ -1,11 +1,11 @@
 def arriba():
-    return "+-+-+-+-+-+-+-+-+"
+    return "+--+--+--+--+--+"
 
 def locales(db):
    global i
    while len(db) > i:
       print(arriba())
-      print(f"|{db[i]}|{db[i+1]}|{db[i+2]}|{db[i+3]}|{db[i+4]}|")
+      print(f"|0{db[i]}|0{db[i+1]}|0{db[i+2]}|0{db[i+3]}|0{db[i+4]}|")
       i += 5
    print(arriba())
 
